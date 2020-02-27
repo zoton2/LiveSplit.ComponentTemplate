@@ -26,6 +26,11 @@ namespace LiveSplit.UI.Components
             return parent;
         }
 
+        public int GetSettingsHashCode()
+        {
+            return CreateSettingsNode(null, null);
+        }
+
         private int CreateSettingsNode(XmlDocument document, XmlElement parent)
         {
             return SettingsHelper.CreateSetting(document, parent, "Example", ExampleSetting);

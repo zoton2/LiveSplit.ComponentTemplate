@@ -41,6 +41,11 @@ namespace LiveSplit.UI.Components
             // do something
         }
 
+        public int GetSettingsHashCode()
+        {
+            return Settings.GetSettingsHashCode();
+        }
+
         public void DrawHorizontal(System.Drawing.Graphics g, LiveSplitState state, float height, System.Drawing.Region clipRegion)
         {
             // do something
