@@ -19,6 +19,6 @@ namespace LiveSplit.UI.Components
 
         public Version Version => Version.Parse("1.0.0");
 
-        public IComponent Create(LiveSplitState state) => new Component(state);
+        public IComponent Create(LiveSplitState state) => new MyComponent(state);
     }
 }
