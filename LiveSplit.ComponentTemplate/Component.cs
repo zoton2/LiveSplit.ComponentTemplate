@@ -8,12 +8,22 @@ namespace LiveSplit.UI.Components
 {
     class MyComponent : IComponent
     {
+        public bool Initialized { get; private set; } = false;
         public Settings Settings { get; set; }
 
         public MyComponent(LiveSplitState state)
         {
             Settings = new Settings();
-            // do something
+            if (state.LayoutSettings != null)
+            {
+                Init();
+            }
+        }
+
+        public void Init()
+        {
+            // Set up the component here, not in the constructor
+            Initialized = true;
         }
 
         public string ComponentName => "Component Template";
@@ -69,6 +79,10 @@ namespace LiveSplit.UI.Components
         public void SetSettings(XmlNode settings)
         {
             Settings.SetSettings(settings);
+            if (!Initialized)
+            {
+                Init();
+            }
         }
 
         public void Update(IInvalidator invalidator, LiveSplitState state, float width, float height, LayoutMode mode)
