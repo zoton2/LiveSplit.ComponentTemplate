@@ -6,11 +6,11 @@ using LiveSplit.Model;
 
 namespace LiveSplit.UI.Components
 {
-    class Component : IComponent
+    class MyComponent : IComponent
     {
         public Settings Settings { get; set; }
 
-        public Component(LiveSplitState state)
+        public MyComponent(LiveSplitState state)
         {
             Settings = new Settings();
             // do something
